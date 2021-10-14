@@ -1,4 +1,4 @@
-## Distributed-Acoustic-Sensor-DAS-Classification-using-Intensity-Phase-Stacked-CNN
+### Pattern recognition in distributed fiber-optic acoustic sensor using an intensity and phase stacked convolutional neural network with data augmentation
 
 ### Citation
 When using this resource, please cite the following publication:
