@@ -15,7 +15,6 @@ Experimental setup             |  Prototype
 
 ---------------------------
 
-
 ### Data description
 This dataset contains 501 labeled intensity and phase waveforms at speaker position. Then classes are summarized in Table 1. In each class, it has 47 to 54 samples, the duration of each sample varies from 0.9s to 4.95s, with a total time of 1816.6s. 
 
