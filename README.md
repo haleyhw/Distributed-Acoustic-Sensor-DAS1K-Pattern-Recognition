@@ -39,6 +39,7 @@ Number | Class| Number of samples | Duration of each sample|
 ### Code dependencies
 * Python 3.7
 * numpy
+* scipy
 * librosa
 * matplotlib
 * scikit-learn
