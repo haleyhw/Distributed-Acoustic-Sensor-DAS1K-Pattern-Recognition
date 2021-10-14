@@ -37,18 +37,18 @@ np_load_old = np.load
 # modify the default parameters of np.load
 np.load = lambda *a,**k: np_load_old(*a, allow_pickle=True, **k)
 
-I_MFCC_X=np.load('II_feature_X.npy')
-I_MFCC_Y=np.load('II_Y.npy')
+I_Mel_X=np.load('II_feature_X.npy')
+I_Mel_Y=np.load('II_Y.npy')
 
 
 le=LabelEncoder()
-i_y=to_categorical(le.fit_transform(I_MFCC_Y))
+i_y=to_categorical(le.fit_transform(I_Mel_Y))
 
 
 num_rows =40
 num_columns = 98
 num_channels = 1
-i_x = I_MFCC_X.reshape(I_MFCC_X.shape[0], num_rows, num_columns, num_channels)
+i_x = I_Mel_X.reshape(I_Mel_X.shape[0], num_rows, num_columns, num_channels)
 ############################################shuffle#################################
 RS=20
 i_xx,i_yy = shuffle(i_x,i_y,random_state=RS)

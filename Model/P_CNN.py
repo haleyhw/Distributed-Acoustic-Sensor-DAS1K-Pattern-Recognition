@@ -37,18 +37,18 @@ np_load_old = np.load
 # modify the default parameters of np.load
 np.load = lambda *a,**k: np_load_old(*a, allow_pickle=True, **k)
 
-P_MFCC_X=np.load('PP_feature_X.npy')
-P_MFCC_Y=np.load('PP_Y.npy')
+P_Mel_X=np.load('PP_feature_X.npy')
+P_Mel_Y=np.load('PP_Y.npy')
 
 
 le=LabelEncoder()
-p_y=to_categorical(le.fit_transform(P_MFCC_Y))
+p_y=to_categorical(le.fit_transform(P_Mel_Y))
 
 
 num_rows =40
 num_columns = 98
 num_channels = 1
-p_x = P_MFCC_X.reshape(P_MFCC_X.shape[0], num_rows, num_columns, num_channels)
+p_x = P_Mel_X.reshape(P_Mel_X.shape[0], num_rows, num_columns, num_channels)
 ############################################shuffle#################################
 RS=20
 p_xx,p_yy = shuffle(p_x,p_y,random_state=RS)
@@ -65,6 +65,8 @@ for train, test in kf.split(p_xx, p_yy):
     p_x_test.append(p_xx[test])
     p_y_train.append(p_yy[train])
     p_y_test.append(p_yy[test])
+    
+##########################################P_CNN#######################################
 
 filter_size=3
 def model(num_rows, num_columns, num_channels):
@@ -126,8 +128,8 @@ p_history_accuracy_mean=np.mean(p_history_accuracy,axis=0)
 p_history_val_accuracy_mean=np.mean(p_history_val_accuracy,axis=0)
 p_history_loss_mean=np.mean(p_history_loss,axis=0)
 p_history_val_loss_mean=np.mean(p_history_val_loss,axis=0)
-################
 
+################ plotting##########
 import matplotlib as mpl
 
 plt.figure(figsize=(18,7))
