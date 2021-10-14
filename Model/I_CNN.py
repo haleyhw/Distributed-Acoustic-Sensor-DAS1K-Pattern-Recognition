@@ -65,7 +65,7 @@ for train, test in kf.split(i_xx, i_yy):
     i_x_test.append(i_xx[test])
     i_y_train.append(i_yy[train])
     i_y_test.append(i_yy[test])
-
+##########################################I_CNN#######################################
 filter_size=3
 def model(num_rows, num_columns, num_channels):
     # construct model
@@ -92,6 +92,7 @@ def model(num_rows, num_columns, num_channels):
 
     return model
 
+##########################################Training#######################################
 num_epochs =3000
 num_batch_size =128
 
@@ -126,7 +127,8 @@ i_history_accuracy_mean=np.mean(i_history_accuracy,axis=0)
 i_history_val_accuracy_mean=np.mean(i_history_val_accuracy,axis=0)
 i_history_loss_mean=np.mean(i_history_loss,axis=0)
 i_history_val_loss_mean=np.mean(i_history_val_loss,axis=0)
-################
+
+################ plotting##########
 
 import matplotlib as mpl
 

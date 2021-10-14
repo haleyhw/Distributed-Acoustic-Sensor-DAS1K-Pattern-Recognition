@@ -93,6 +93,7 @@ def model(num_rows, num_columns, num_channels):
     model.add(Dense(10,activation='softmax'))
 
     return model
+##########################################Training#######################################
 
 num_epochs =3000
 num_batch_size =128
